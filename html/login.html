@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <header>
+        <h1>Travel Requestor</h1>
+    </header>
+    <div class="container">
+        <form class="login-form" id="loginForm" onsubmit="validateLogin(event)">
+            <h2>Login</h2>
+            <label for="Username"><b>Username:</b></label>
+            <input type="text" id="userName" name="userName" required>
+
+            <label for="password"><b>Password:</b></label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">LOGIN</button>
+        </form>
+    </div>
+    <script src="../js/login.js">   
+    </script>
+</body>
+</html>

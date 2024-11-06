@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin View</title>
+    <link rel="stylesheet" href="../css/adminview.css">
+</head>
+<body>
+    <header>
+        <h1>TRAVEL REQUESTOR</h1>
+        <div id="img">
+            <img src="../images/user logo.jpg" alt="user logo" id="userLogo">
+            <button class="logout-button" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <div class="options">
+        <button id="allbtn">All</button>
+        <button id="normalBtn">Normal</button>
+        <button id="criticalBtn">Crirical</button>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Destination</th>
+                    <th>Priority</th>
+                    <th>View Details</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="viewTable">
+            </tbody>
+        </table>
+    </div>
+
+<script src="../js/adminview.js"></script>
+</body>
+</html>

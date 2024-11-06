@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Request</title>
+    <link rel="stylesheet" href="../css/request.css">
+</head>
+<body>
+    <header>
+        <h1>TRAVEL REQUESTOR</h1>
+        <div id="img">
+            <img src="../images/user logo.jpg" alt="user logo" id="userLogo">
+            <button class="logout-button" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <nav id="navid" class="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="javascript:void(0)" onclick="backToForm()">Form</a></li>
+                <li><a href="javascript:void(0)" onclick="viewRequest()">View Request</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="form-container" id="form">
+        <h2>Travel Request Form</h2>
+        <form id="requestForm" onsubmit="travelRequest(event)">
+            <div>
+                <label for="empID">Employee Id</label>
+                <input type="text" id="empID" name="empID" pattern="\d+" title="Digits only" required>
+            </div>
+            <div>
+                <label for="empName">Employee Name</label>
+                <input type="text" id="empName" name="empName" required>
+            </div>
+            <div>
+                <label for="project">Project</label>
+                <input type="text" id="project" name="project" required>
+            </div>
+            <div>
+                <label for="cause">Cause for Travel</label>
+                <input type="text" id="cause" name="cause" required>
+            </div>
+            <div>
+                <label for="source">Source</label>
+                <input type="text" id="source" name="source" required>
+            </div>
+            <div>
+                <label for="destination">Destination</label>
+                <input type="text" id="destination" name="destination" required>
+            </div>
+            <div>
+                <label for="fromdate">From Date</label>
+                <input type="date" id="fromdate" name="fromdate" required>
+            </div>
+            <div>
+                <label for="noofdays">Number of Days</label>
+                <input type="number" min="1" max="15" id="noofdays" name="noofdays" required>
+            </div>
+            <div>
+                <label for="modeoftravel">Mode of Travel</label>
+                <select id="modeoftravel" name="modeoftravel" required>
+                    <option value="" disabled selected>Mode of Travel</option>
+                    <option value="bus">Bus</option>
+                    <option value="train">Train</option>
+                    <option value="flight">Flight</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div id="btn">
+                <button type="submit">Submit Request</button>
+            </div>
+        </form>
+    </div>
+
+    
+    <div class="view-container" id="view" style="display: none;">
+        <h2>View Submitted Requests</h2>
+        <label for="statusFilter">Filter by Status:</label>
+        <select id="statusFilter" onchange="filterRequests()">
+            <option value="All">All</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+            <option value="On Hold">On Hold</option>
+        </select>
+        <main class="table-container">
+            <br/>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Destination</th>
+                        <th>Set Priority</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="viewTable">
+                    
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <script src="../js/request.js" defer></script>
+</body>
+</html>
